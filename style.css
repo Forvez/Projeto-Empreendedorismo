@@ -1,0 +1,558 @@
+:root {
+    --cor-primaria: #FFC107;
+    --cor-secundaria: #0e0e0e;
+    --cor-fundo: #1f1f1f;
+    --cor-clara: #2c2c2c;
+    --fonte-principal: 'Oswald', sans-serif;
+    --fonte-destaque: 'Bebas Neue', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Setinha */
+.scroll-indicator {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    font-size: 3.5em;
+    color: var(--cor-primaria);
+    animation: bounce 1.5s infinite;
+    z-index: 999;
+}
+
+/* Animação da "Setinha" */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Corpo da página */
+body {
+    font-family: var(--fonte-principal);
+    line-height: 1.6;
+    background-color: var(--cor-secundaria);
+    color: #e0e0e0;
+    zoom: 0.8;
+}
+
+/* Header */
+header {
+    background: url('background-hero.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 10px 5px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0px 4px 20px rgba(255, 238, 0, 0.3);
+}
+header .centralizado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+  }
+
+/* Navegação */
+nav {
+    /*background: #0e0e0e;*/
+    /*position: fixed;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5px;
+    z-index: 1;
+}
+
+nav .logo img {
+    width: 100px;
+    transition: transform 0.3s ease-in-out; /* Acelerando a transição */
+}
+
+/* A animação de aumento da logo */
+nav .logo img:hover {
+    transform: scale(1.2);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.6s ease;
+}
+
+nav ul li a:hover {
+    color: var(--cor-primaria);
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    z-index: 1;
+}
+
+.texto-hero {
+    max-width: 50%;
+}
+
+.texto-hero h1 {
+    font-family: var(--fonte-destaque);
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.texto-hero p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.botao-principal {
+    background-color: var(--cor-primaria);
+    color: #0e0e0e;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 3px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.botao-principal a {
+    color: #242323;
+    text-decoration: none;
+}
+
+.botao-principal:hover {
+    background-color: #E0A800;
+    transform: scale(1.05);
+    border: 2px solid #FFC107;
+}
+
+/* Seção de "Sobre Nós" */
+.destaque-info {
+    background: url('sua-imagem-de-fundo.jpg') no-repeat center center/cover;
+    padding: 40px 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    color: white; 
+    text-align: center;
+}
+
+.destaque-info p {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+/* Ajustando o fundo da seção para dispositivos menores */
+@media (max-width: 768px) {
+    .destaque-info {
+        padding: 30px 15px;
+    }
+
+    .destaque-info p {
+        font-size: 1.1em;
+    }
+}
+
+.imagem-hero img {
+    width: 400px;
+    height: auto;
+    border-radius: 3px;
+    transition: transform 0.3s ease;
+}
+
+.imagem-hero img:hover {
+    transform: scale(1.1);
+}
+
+.servico img {
+    width: 100%;
+    height: 245px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Seções Gerais */
+.section {
+    padding: 30px 20px;
+    text-align: center;
+    margin: 40px 0; 
+}
+
+.section p {
+    font-size: 1.4em;
+}
+
+.section h2 {
+    font-family: var(--fonte-destaque);
+    font-size: 4.8em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.destaque {
+    color: var(--cor-primaria);
+}
+
+/* Links */
+.link-email {
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+.link-email:hover {
+    text-decoration: underline;
+}
+
+/* grid */
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* Ajustando o estilo dos blocos */
+.servico {
+    background-color: var(--cor-fundo);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Ajustando o tamanho do título */
+.servico h3 {
+    font-family: var(--fonte-destaque);
+    font-size: 2em;
+    margin-bottom: 3px;
+    font-weight: bold;
+}
+
+/* Ajustando o tamanho da descrição */
+.servico p {
+    font-size: 1.2em;
+    margin-bottom: 9px;
+}
+
+/* Ajustando o valor */
+.valor {
+    font-size: 2.4em;
+    margin-bottom: 18px;
+    font-weight: bold;
+    color: var(--cor-primaria);
+}
+
+.servico:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    background-color: #333; 
+}
+
+/* Movimento das imagens e textos */
+.servico img,
+.servico h3,
+.servico p {
+    transition: transform 0.3s ease; 
+}
+
+.servico:hover img {
+    transform: scale(1.05); 
+}
+
+.servico:hover h3,
+.servico:hover p {
+    transform: translateY(-5px); 
+}
+
+/* Redes sociais */
+.social-media {
+    margin-top: auto;
+}
+
+.insta img {
+    width: 40px; /* ou ajuste como preferir */
+    height: auto;
+}
+
+.social-btn {
+    display: inline-block;
+    margin: 8px;
+    background-color: #0e0e0e;
+    padding: 10px 18px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.social-btn:hover {
+    background-color: var(--cor-primaria);
+}
+
+/* Mapa */
+.mapa {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.mapa h2 {
+    font-size: 2.5em;
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+}
+
+/* Rodapé  - Tutorial Youtube*/
+footer {
+    background-image: url('./assets.img/wave.svg'); /* Definindo a imagem de fundo */
+    background-size: cover; /* Ajusta a imagem para cobrir toda a área do footer */
+    background-position: bottom center; /* Posiciona a imagem na parte inferior do footer */
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 0.9em;
+    position: relative; /* Para garantir que o conteúdo fique acima da imagem */
+}
+
+footer img {
+    width: 100%;
+    display: flex;
+    height: auto;
+    position: absolute;
+    bottom: 0; /* Coloca a imagem no fundo */
+    left: 0;
+    right: 0;
+    z-index: 1; /* Coloca a imagem abaixo do texto */
+}
+
+footer p {
+    z-index: 2; /* Garante que o texto esteja acima da imagem */
+    position: relative; /* Para garantir que o texto fique sobre a imagem */
+    margin: 0;
+    padding-top: 10px; /* Distância entre a imagem e o texto */
+}
+
+
+/* Animação suave para rolagem */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .texto-hero {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .texto-hero h1 {
+        font-size: 3em;
+    }
+
+    .texto-hero p {
+        font-size: 1.3em;
+    }
+
+    .imagem-hero img {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    nav ul {
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 80px 10px;
+    }
+
+    .section h2 {
+        font-size: 3.5em;
+    }
+
+    .servicos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .servico h3 {
+        font-size: 1.8em;
+    }
+
+    .valor {
+        font-size: 1.8em;
+    }
+
+    .botao-principal {
+        font-size: 1.0em;
+
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .texto-hero {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .texto-hero h1 {
+        font-size: 2.5em;
+    }
+
+    .texto-hero p {
+        font-size: 1.2em;
+    }
+
+    .imagem-hero img {
+        width: 80%;
+        max-width: 250px;
+    }
+
+    nav ul li {
+        margin: 8px 10px;
+    }
+
+    .section h2 {
+        font-size: 3.5em;
+    }
+
+    .servicos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .servico h3 {
+        font-size: 1.8em;
+    }
+
+    .valor {
+        font-size: 1.8em;
+    }
+
+    .botao-principal {
+        font-size: 1.0em;
+        margin: 0 10px;
+    }
+    footer img{
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .texto-hero h1 {
+        font-size: 2.2em;
+    }
+
+    .texto-hero p {
+        font-size: 1.1em;
+    }
+
+    .imagem-hero img {
+        width: 90%;
+        max-width: 200px;
+    }
+
+    .section h2 {
+        font-size: 2.5em;
+    }
+
+    .servico h3 {
+        font-size: 1.6em;
+    }
+
+    .valor {
+        font-size: 1.5em;
+    }
+
+    .botao-principal {
+        font-size: 1.1em;
+        padding: 10px 20px;
+        margin: 5px 0;
+
+    }
+}
+.logo-botao {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  width: 70px; /* tamanho do botão */
+  height: 80px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.logo-botao img {
+  width: 125%;
+  height: auto;
+  border-radius: 50%; /* opcional: deixa o logo redondo */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* sombra leve */
+  transition: transform 0.3s ease;
+}
+
+.logo-botao img:hover {
+  transform: scale(1.1); /* efeito ao passar o mouse */
+}

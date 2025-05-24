@@ -1,0 +1,20 @@
+<svg width="100%" height="175px" viewBox="0 0 1440 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .wave path {
+      animation: waveMove 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes waveMove {
+      0% {
+        d: path("M0,75 C360,0 1080,150 1440,75 L1440,150 L0,150 Z");
+      }
+      100% {
+        d: path("M0,75 C360,150 1080,0 1440,75 L1440,150 L0,150 Z");
+      }
+    }
+  </style>
+
+  <g class="wave">
+    <path d="M0,75 C360,0 1080,150 1440,75 L1440,150 L0,150 Z" fill="#f1c40f" />
+  </g>
+</svg>
